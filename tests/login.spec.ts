@@ -21,4 +21,5 @@ test('login', async ({page}) =>{
     await premisePage.clickOnDesiredPremise(constants.premise)
     await premisePage.clickOnFillReport()
     await fillReportPage.selectFormField('system_type')
+    await fillReportPage.selectOptionFromDropdown(constants.system_type)
 })
