@@ -8,11 +8,11 @@ export class SideMenuPage{
 
         constructor(page: Page){
             this.page = page
-            this.menuList = page.locator("//ul[@class='menu-nav']");
+            this.menuList = page.locator(".menu-text");
         }
 
         async selectMenuOption(menuOption: string){
-            await this.menuList.getByText(menuOption).click()
+            await this.menuList.filter({hasText: menuOption}).first().click()
         }
     
 }
