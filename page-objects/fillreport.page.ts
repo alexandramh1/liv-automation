@@ -1,7 +1,7 @@
 import { expect, type Locator, type Page } from '@playwright/test';
 import generateRandomString from '../fixtures/utils/generateJobID';
 import path from 'path';
-import { setTimeout } from 'timers/promises';
+import generateDate from '../fixtures/utils/generateDates';
 
 export class FillReportPage {
     readonly page: Page;
@@ -10,6 +10,8 @@ export class FillReportPage {
     readonly jobID: Locator;
     readonly finalSubmitButton: Locator;
     readonly uploadFileInput: Locator;
+    readonly calendarButton: Locator;
+    readonly calendarTable: Locator;
 
     constructor(page: Page) {
         this.page = page
@@ -17,6 +19,8 @@ export class FillReportPage {
         this.jobID = page.getByPlaceholder("Enter Job ID")
         this.finalSubmitButton = page.locator("//button[@style = 'min-width: 50px']")
         this.uploadFileInput = page.locator('mat-card-content').filter({ hasText: 'Fire Alarm SystemPlease' }).locator('input[type="file"]')
+        this.calendarButton = page.locator('//button[@aria-label="Open calendar"]')
+        this.calendarTable = page.locator("//td/div")
     }
 
     async selectFormField(fieldName: string) {
@@ -36,5 +40,9 @@ export class FillReportPage {
     }
     async uploadFile() {
         await this.uploadFileInput.setInputFiles(path.join(process.cwd(), '/assets/testdoc.pdf'))
+    }
+    async selectDateFromCalendar(){
+        await this.calendarButton.click()
+        await this.calendarTable.filter({hasText: generateDate()}).click()
     }
 }

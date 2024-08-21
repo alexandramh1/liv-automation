@@ -9,8 +9,8 @@ export class LoginPage{
         constructor(page: Page){
             this.page = page;
             this.loginButton = page.locator('button[color="primary"]')
-            this.emailInput = page.locator('input[type="email"]');
-            this.passwordInput = page.locator('input[formcontrolname="password"]');
+            this.emailInput = page.getByPlaceholder('Email')
+            this.passwordInput = page.getByPlaceholder('Password');
         }
     
     async openURL(){

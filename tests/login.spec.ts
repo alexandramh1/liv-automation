@@ -30,7 +30,7 @@ describe('Test variables', () => {
         await premisePage.clickOnFillReport()
     })
 
-    test('login', async () => {
+    test('compliant', async () => {
         await fillReportPage.selectFormField('system_type')
         await fillReportPage.selectOptionFromDropdown(constants.system_type)
         await fillReportPage.selectFormField('filling_type')
@@ -43,6 +43,12 @@ describe('Test variables', () => {
         await fillReportPage.selectFormField('report_type')
         await fillReportPage.selectOptionFromDropdown(constants.report_type)
         await fillReportPage.uploadFile()
+        await fillReportPage.selectDateFromCalendar()
         await fillReportPage.clickOnFinalSubmitButton()
+        await sideMenuPage.logout()
+    })
+
+    test('deficient', async () => {
+        
     })
 });
