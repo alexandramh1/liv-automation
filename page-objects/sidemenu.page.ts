@@ -26,7 +26,7 @@ export class SideMenuPage{
         }
         
         async logout(){
-            await this.closeMessage.click()
+            await this.closeMessage.click
             await this.userProfileOptions.click()
             await this.logoutButton.click()
         }

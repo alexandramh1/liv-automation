@@ -1,10 +1,25 @@
 {
-    "email" : "kaili.kott@aptim.com",
-    "password" : "Chase#1111",
-    "premise" : "Oxmoor Logistics",
-    "system_type" : "Fire Alarm System",
-    "filling_type" : "File Upload",
-    "contact_ids": "Alexandra",
-    "inspector_id": "Target Corporation",
-    "report_type" : "No"
+    "fillReportTesData": [
+        {
+            "premise": "Oxmoor Logistics",
+            "system_type": "Fire Alarm System",
+            "filling_type": "File Upload",
+            "contact_ids": "Alexandra",
+            "inspector_id": "Target Corporation",
+            "report_type": "No"
+        },
+        {
+            "premise": "Octapharma",
+            "system_type": "Fire Alarm System",
+            "filling_type": "File Upload",
+            "contact_ids": "alex",
+            "inspector_id": "Target Corporation",
+            "report_type": "Yes",
+            "deficiency_classification": "Impairment"
+        }
+    ],
+    "loginData": {
+        "email": "kaili.kott@aptim.com",
+        "password": "Chase#1111"
+    }
 }

@@ -41,8 +41,10 @@ export class FillReportPage {
     async uploadFile() {
         await this.uploadFileInput.setInputFiles(path.join(process.cwd(), '/assets/testdoc.pdf'))
     }
-    async selectDateFromCalendar(){
+    async selectDateFromCalendar() {
         await this.calendarButton.click()
-        await this.calendarTable.filter({hasText: generateDate()}).click()
+        await this.calendarTable.filter({ hasText: generateDate() }).click()
     }
+
+
 }

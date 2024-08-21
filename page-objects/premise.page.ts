@@ -11,7 +11,7 @@ export class PremisePage{
         constructor(page: Page){
             this.page = page
             this.premiseToSelect = page.getByPlaceholder('Premises Name')
-            this.desiredPremiseSelect = page.locator(".mat-column-premise_name")
+            this.desiredPremiseSelect = page.locator("//mat-cell/a")
             this.fillReportButton = page.locator("//button[@color ='warn']")
         }
 
