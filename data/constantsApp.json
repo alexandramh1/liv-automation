@@ -1,14 +1,6 @@
 {
-    "fillReportTesData": [
-        {
-            "premise": "Oxmoor Logistics",
-            "system_type": "Fire Alarm System",
-            "filling_type": "File Upload",
-            "contact_ids": "Alexandra",
-            "inspector_id": "Target Corporation",
-            "report_type": "No"
-        },
-        {
+    "fillDeficientReportTesData": [
+        {   "id":"tst-01",
             "premise": "Octapharma",
             "system_type": "Fire Alarm System",
             "filling_type": "File Upload",
@@ -16,6 +8,16 @@
             "inspector_id": "Target Corporation",
             "report_type": "Yes",
             "deficiency_classification": "Impairment"
+        }
+    ],
+    "fillComplaintReportTestData":[
+        {   "id":"tst-02",
+            "premise": "Oxmoor Logistics",
+            "system_type": "Fire Alarm System",
+            "filling_type": "File Upload",
+            "contact_ids": "Alexandra",
+            "inspector_id": "Target Corporation",
+            "report_type": "No"
         }
     ],
     "loginData": {

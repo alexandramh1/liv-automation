@@ -41,8 +41,8 @@ test.describe('Test variables', () => {
         await browser.close()
     })
 
-    constants.fillReportTesData.forEach(({ premise, system_type, filling_type, contact_ids, inspector_id, report_type, deficiency_classification }) => {
-        test(`testing with ${report_type}`, async () => {
+    constants.fillDeficientReportTesData.forEach(({ id, premise, system_type, filling_type, contact_ids, inspector_id, report_type, deficiency_classification }) => {
+        test(`testing with ${id}`, async () => {
             await premisePage.searchPremise(premise)
             await premisePage.clickOnDesiredPremise(premise)
             await premisePage.clickOnFillReport()
@@ -61,7 +61,43 @@ test.describe('Test variables', () => {
             await fillReportPage.selectDateFromCalendar()
             await deficiencySectionPage.isDeficiencyTitleProvided(deficiency_classification);
             await fillReportPage.clickOnFinalSubmitButton()
+            //clear deficiency
+            await premisePage.clickOnFillReport()
+            await fillReportPage.selectFormField('system_type')
+            await fillReportPage.selectOptionFromDropdown(system_type)
+            await fillReportPage.selectFormField('filling_type')
+            await fillReportPage.selectOptionFromDropdown(filling_type)
+            await fillReportPage.selectFormField('contact_ids')
+            await fillReportPage.selectOptionFromDropdown(contact_ids)
+            await fillReportPage.selectFormField('inspector_id')
+            await fillReportPage.selectOptionFromDropdown(inspector_id)
+            await fillReportPage.fillJobID()
+            await fillReportPage.uploadFile()
+            await fillReportPage.selectDateFromCalendar()
+            await fillReportPage.clickOnFinalSubmitButton()
         });
     });
+
+    constants.fillComplaintReportTestData.forEach(({id, premise, system_type, filling_type, contact_ids, inspector_id, report_type})=> {
+        test(`testing with ${id}`, async ()=> {
+            await premisePage.searchPremise(premise)
+            await premisePage.clickOnDesiredPremise(premise)
+            await premisePage.clickOnFillReport()
+            await fillReportPage.selectFormField('system_type')
+            await fillReportPage.selectOptionFromDropdown(system_type)
+            await fillReportPage.selectFormField('filling_type')
+            await fillReportPage.selectOptionFromDropdown(filling_type)
+            await fillReportPage.selectFormField('contact_ids')
+            await fillReportPage.selectOptionFromDropdown(contact_ids)
+            await fillReportPage.selectFormField('inspector_id')
+            await fillReportPage.selectOptionFromDropdown(inspector_id)
+            await fillReportPage.fillJobID()
+            await fillReportPage.selectFormField('report_type')
+            await fillReportPage.selectOptionFromDropdown(report_type)
+            await fillReportPage.uploadFile()
+            await fillReportPage.selectDateFromCalendar()
+            await fillReportPage.clickOnFinalSubmitButton()
+        })
+    })
 });
 

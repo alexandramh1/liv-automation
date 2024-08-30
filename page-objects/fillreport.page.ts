@@ -24,10 +24,12 @@ export class FillReportPage {
     }
 
     async selectFormField(fieldName: string) {
-        await this.page.locator(`//mat-form-field[@test-id ="${fieldName}"]//div[@class='mat-select-trigger']`).click()
+        const formField = this.page.locator(`//mat-form-field[@test-id ="${fieldName}"]//div[@class='mat-select-trigger']`)
+        formField.click()
     }
 
-    async selectOptionFromDropdown(optionToSelect: string) {
+    async selectOptionFromDropdown(optionToSelect: string | undefined) {
+        if (!optionToSelect) return;
         await this.optionToSelect.filter({ hasText: optionToSelect }).click();
         await this.page.keyboard.press('Escape')
     }
@@ -45,6 +47,4 @@ export class FillReportPage {
         await this.calendarButton.click()
         await this.calendarTable.filter({ hasText: generateDate() }).click()
     }
-
-
 }
