@@ -45,6 +45,7 @@ export class FillReportPage {
     }
     async selectDateFromCalendar() {
         await this.calendarButton.click()
-        await this.calendarTable.filter({ hasText: generateDate() }).click()
+        await this.calendarTable.filter({ hasText: generateDate() }).first().click()
     }
+
 }
