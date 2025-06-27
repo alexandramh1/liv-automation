@@ -1,0 +1,16 @@
+{
+    "verifyPDFSize":[
+        {
+            "id": "pdf-size-01",
+            "premise":"Octapharma"
+        },
+        {
+            "id": "pdf-size-02",
+            "premise":"Princeton Baptist Medical Center"
+        }
+    ],
+    "loginData": {
+        "email": "kaili.kott@aptim.com",
+        "password": "Chase#1111"
+    }
+}

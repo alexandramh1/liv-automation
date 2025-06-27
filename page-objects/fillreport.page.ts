@@ -18,13 +18,14 @@ export class FillReportPage {
         this.optionToSelect = page.locator("//span[@class='mat-option-text']")
         this.jobID = page.getByPlaceholder("Enter Job ID")
         this.finalSubmitButton = page.locator("//button[@style = 'min-width: 50px']")
-        this.uploadFileInput = page.locator('mat-card-content').filter({ hasText: 'Fire Alarm SystemPlease' }).locator('input[type="file"]')
+        //this.uploadFileInput = page.locator('mat-card-content').filter({ hasText: 'Fire Alarm SystemPlease' }).locator('input[type="file"]')
+        this.uploadFileInput = page.locator('//app-file-picker[@test-data="inspection_report_upload"]//input')
         this.calendarButton = page.locator('//button[@aria-label="Open calendar"]')
         this.calendarTable = page.locator("//td/div")
     }
 
     async selectFormField(fieldName: string) {
-        const formField = this.page.locator(`//mat-form-field[@test-id ="${fieldName}"]//div[@class='mat-select-trigger']`)
+        const formField = this.page.locator(`[test-data="${fieldName}"]`)
         formField.click()
     }
 

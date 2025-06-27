@@ -1,22 +1,56 @@
 {
     "fillDeficientReportTesData": [
-        {   "id":"tst-01",
+        {   "id":"deficient-01",
             "premise": "Octapharma",
             "system_type": "Fire Alarm System",
             "filling_type": "File Upload",
-            "contact_ids": "alex",
-            "inspector_id": "Target Corporation",
+            "contacts": "alex",
+            "inspector": "Target Corporation",
             "report_type": "Yes",
             "deficiency_classification": "Impairment"
+        },
+        {   "id":"deficient-02",
+            "premise": "Princeton Baptist Medical Center",
+            "system_type": "Commercial Hood Suppression",
+            "filling_type": "File Upload",
+            "contacts": "alex",
+            "inspector": "Target Corporation",
+            "report_type": "Yes",
+            "deficiency_classification": "Impairment"
+        },
+        {   "id":"deficient-03",
+            "premise": "Party City",
+            "system_type": "Fire Extinguishers",
+            "filling_type": "File Upload",
+            "contacts": "alexandra",
+            "inspector": "Target Corporation",
+            "report_type": "Yes",
+            "deficiency_classification": "Non - Critical"
         }
     ],
     "fillComplaintReportTestData":[
-        {   "id":"tst-02",
+        {   "id":"compliant-01",
             "premise": "Oxmoor Logistics",
             "system_type": "Fire Alarm System",
             "filling_type": "File Upload",
-            "contact_ids": "Alexandra",
-            "inspector_id": "Target Corporation",
+            "contacts": "Alexandra",
+            "inspector": "Target Corporation",
+            "report_type": "No"
+        },
+        {   "id":"compliant-02",
+            "premise": "Dulion Apartments",
+            "system_type": "Backflow",
+            "filling_type": "File Upload",
+            "contacts": "Alexandra",
+            "inspector": "Target Corporation",
+            "report_type": "No"
+        },
+        {   "id":"compliant-03",
+            "premise": "Kalimera",
+            "system_type": "Fire Extinguishers",
+            "filling_type": "File Upload",
+            "contacts": "Alex",
+            "inspector": "Target Corporation",
             "report_type": "No"
         }
     ],

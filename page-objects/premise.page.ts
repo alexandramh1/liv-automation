@@ -10,7 +10,7 @@ export class PremisePage{
 
         constructor(page: Page){
             this.page = page
-            this.premiseToSelect = page.getByPlaceholder('Premises Name')
+            this.premiseToSelect = page.getByPlaceholder('Search in all fields')
             this.desiredPremiseSelect = page.locator("//mat-cell/a")
             this.fillReportButton = page.locator("//button[@color ='warn']")
         }
